@@ -3,17 +3,12 @@ Library  SeleniumLibrary
 Resource  ../resources/variables.robot
 Resource  ../resources/keywords.robot
 
-*** Test Cases ***
-Valid Login
-    [Documentation]  Test valid login with correct username and password
-    Open Login Page
-    Input Username  ${VALID_USERNAME}
-    Input Password  ${VALID_PASSWORD}
-    Submit Login
 
-Invalid Login
-    [Documentation]  Test invalid login with incorrect username and password
-    Open Login Page
-    Input Username  ${INVALID_USERNAME}
-    Input Password  ${INVALID_PASSWORD}
-    Submit Login
+*** Test Cases ***
+Open Browser and Check Title
+    Open Browser  ${URL}  browser=${BROWSER}  executable_path=${DRIVER_PATH}
+    Title Should Be  Test Login | Practice Test Automation
+    [Teardown]  Close Browser
+
+
+

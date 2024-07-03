@@ -15,3 +15,8 @@ Input Password
 
 Submit Login
     Click Button  //button[@class='btn']
+    
+Get Browser Options
+    [Arguments]  ${driver_path}
+    ${options}  Create Dictionary  executable_path=${driver_path}
+    [Return]  ${options}
