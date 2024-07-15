@@ -21,7 +21,7 @@ WORKDIR /opt/robotframework/tests
 # Install necessary system packages
 RUN apt-get update && apt-get install -y git
 
-
-COPY . .
+RUN git clone https://github.com/purva-vvdn/Robotdemo.git
+# COPY . .
 
 CMD [ "robot","." ]
