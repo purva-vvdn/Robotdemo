@@ -6,5 +6,5 @@ ${INVALID_USERNAME}  invalid_user
 ${INVALID_PASSWORD}  invalid_password
 ${URL}      https://practicetestautomation.com/practice-test-login/
 ${BROWSER}  chrome
-${DRIVER_PATH}  /usr/src/app/Robotdemo/resources/chromedriver
-
+${DRIVER_PATH} /opt/robotframework/tests/Robotdemo/resources/chromedriver
+# ${DRIVER_PATH}  /home/purva/Documents/Robotdemo/resources/chromedriver

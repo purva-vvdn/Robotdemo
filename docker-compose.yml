@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  selenium:
+    image: selenium/standalone-chrome:latest
+    container_name: selenium
+    ports:
+      - "4444:4444"
+    networks:
+      - robot-network
+
+  robot:
+    build: .
+    container_name: robot-framework
+    volumes:
+      - ./tests:/opt/robotframework/tests
+      - ./reports:/opt/robotframework/reports
+    environment:
+      - ROBOT_OPTIONS=--variable SELENIUM:selenium:4442
+    depends_on:
+      - selenium
+    networks:
+      - robot-network
+
+networks:
+  robot-network:
+    driver: bridge
