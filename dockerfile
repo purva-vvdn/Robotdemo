@@ -7,6 +7,9 @@ RUN apt-get update && \
 
 RUN pip install robotframework
 RUN pip install robotframework-seleniumlibrary
+
+
+
 # Install Chrome
 RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && \
     dpkg -i google-chrome-stable_current_amd64.deb || apt-get -f install -y && \
@@ -21,7 +24,8 @@ WORKDIR /opt/robotframework/tests
 # Install necessary system packages
 RUN apt-get update && apt-get install -y git
 
-RUN git clone https://github.com/purva-vvdn/Robotdemo.git
-# COPY . .
+# RUN git clone https://github.com/purva-vvdn/Robotdemo.git
+COPY . .
+RUN pip install -r requirement.txt
 
 CMD [ "robot","." ]
